@@ -17,6 +17,7 @@
   --ds-color-surface-inverse: #0a0a0b;
   --ds-color-accent: #1620f5;
   --ds-color-accent-hover: var(--ds-color-accent);
+  --ds-color-on-accent: #ffffff;
   --ds-color-feedback-error: #ff6b6b;
   --ds-color-border: #cfd1d5;
   --ds-color-border-light: #e2e4e9;
