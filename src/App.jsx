@@ -1,58 +1,7 @@
 import { useEffect, useRef, useState } from "react";
+import { companies, consultingSelection, focusAreas, processSteps, productExperience, serviceTracks, speakingPanels, stats, teachingMentoring, teachingRows, writingArticles } from "./content/siteContent.js";
 const logoUrl = "/assets/ali-babaei-logo-v2.png?rev=20260821";
 const formspreeEndpoint = "https://formspree.io/f/xbgrwqyy";
-
-const companies = ["Telewebion", "Behsazan Mellat", "Skyroom", "BimeBazar", "BeAndam", "Persis Pooya Data", "Quera", "Seram Pakhsh", "Pezeshk Khoob", "Noban", "Sanjagh", "Ankuy"];
-const focusAreas = ["Conversion", "Retention", "Usability audit", "Team coaching", "Design thinking workshop", "Hiring & team growth"];
-const processSteps = [
-  ["Employer request", "You reach out with the situation as you see it."],
-  ["Understanding your situation", "You answer a short set of questions that shape the proposal."],
-  ["Scope proposal", "A defined scope, not an open-ended retainer."],
-  ["Understanding your org", "Current state across all four areas of help, your team, product and existing practice."],
-  ["Planned work", "Scheduled sessions against agreed outcomes."],
-  ["Ongoing guidance", "Unscheduled support as real questions come up."],
-];
-const serviceTracks = [
-  ["01", "User Experience Optimization", "Understanding the user", ["Passive research — feedback, attention & behaviour analysis", "Active research — surveys, usability testing & interviews", "Market segmentation"]],
-  ["02", "Team Effectiveness", "Coaching your designers", ["Communication, soft skills & design briefs", "Presenting, demoing & documenting design", "Design ops — design system growth & tooling fluency", "Team growth, hiring & method selection"]],
-  ["03", "Design Culture & Advocacy", "Building the case internally", ["Promoting design thinking across teams", "Defining shared design principles & language", "Connecting design work to business goals"]],
-  ["04", "Design Strategy", "Via the user journey", ["Conversion rate improvement", "Retention and engagement improvement"]],
-];
-const consultingSelection = [
-  ["Telewebion", "Video streaming", "Restructured information architecture and redesigned the Android interface, improving the browse-to-play journey."],
-  ["Baroro", "Beauty platform", "Visual and usability audit of the website interface, exploratory user-research and testing plan, and engagement improvements."],
-  ["Skyroom", "Live classrooms", "Website UX and redesign of the educational admin panel."],
-  ["BimeBazar / BeAndam", "Insurtech · Health", "Conversion optimisation of insurance purchase and diet-plan checkout flows."],
-  ["Persis Pooya Data", "Enterprise ERP", "Usability audit and redesign direction for an enterprise ERP system."],
-  ["Quera", "Edtech", "Design research and customer journey analysis."],
-  ["Roomvu", "Real estate · 2018 — 2020", "Led a heatmap-driven review and redesign of the subscription journey, translating behavioural evidence into product changes that lifted subscription renewal."],
-  ["Pezeshk Khoob / Noban", "Healthtech", "Usability audit and redesign of the doctor-appointment booking journey."],
-];
-const teachingMentoring = [
-  ["Amanj Academy", "2018 — Present", "Architected a problem-first product design curriculum and delivered five in-person and 17 online cohorts — the longest-running program of its kind in the market."],
-  ["Rahnema College", "2017 — 2021", "Designed four product design programs and taught interaction and visual design alongside an in-house consumer-product team."],
-  ["Universities", "2017 — 2021", "Guest lecturer and thesis juror across six universities, teaching UI and interaction design to BA and MA students."],
-  ["Career Path Design & Deframe", "2023 — Present", "Founded independent coaching and problem-solving programs; Deframe has run with Divar, BimeBazar and Aparat."],
-  ["Accelerators & academies", "2018 — 2023", "Design mentor and instructor across Source/Sintech, GreenTech, Noafarinan, Product Factory, Doosent, Anso and Target."],
-];
-const productExperience = [
-  ["Rahnema", "2017 — 2021", "UI/UX Designer — Beeptunes music streaming, Rahnema College website and LMS."],
-  ["Iris", "2015 — 2017", "UI/UX Designer — language-learning product across web, Windows and Android."],
-  ["Taninno", "2016 — 2017", "Product Designer — defined features and designed the first Android release."],
-  ["Radcom System", "2013 — 2015", "Web Designer — e-commerce interfaces for Celebon, Pishgamiso, Sobhan Group, Aryan360."],
-  ["Tarashe Pardaz Homa", "2005 — 2010", "Web & Graphic Designer — client websites, financial security and e-learning software interfaces."],
-];
-const speakingPanels = [
-  ["2025", "Scientific Committee Chair, UserX Shiraz Conference."],
-  ["2018 — 2019", "Speaker at UserX and workshop lead for UI design."],
-  ["2019", "Panelist at Visionary Conference and the IDF panel."],
-  ["2016", "Winner, Iran Web Festival, for Alounak."],
-  ["2016", "Taninno exhibited at GITEX Dubai and CeBIT Hannover."],
-];
-const writingArticles = [
-  ["2026", "The Context Trap: Why Design Frameworks Fail in the Real World", "Design frameworks like Design Thinking promise a fixed path, but most organisations don't match the ideal case they assume. This piece maps the real environments design operates in and argues the outcome matters more than the process used to reach it.", "https://medium.com/design-bootcamp/the-context-trap-why-design-frameworks-fail-in-the-real-world-ce8dd202be11"],
-  ["2023", "User Experience Hackers", "Usability is only the starting point of user experience — not its goal. This piece distinguishes designers who refine known patterns from those who hack experience itself, building unexpected moments that earn genuine customer loyalty.", "https://medium.com/design-bootcamp/user-experience-hackers-13b8bf1af1e3"],
-];
 
 function validateContactField(field, value) {
   const trimmedValue = value.trim();
@@ -192,8 +141,7 @@ function Hero() {
 }
 
 function Stats() {
-  const stats = [["20+", "Years in product design"], ["40+", "Design cohorts led"], ["15+", "Product teams advised"], ["8", "Years coaching designers"]];
-  return <section className="stats-section"><div className="stats-grid">{stats.map(([value, label], index) => <div className="stat" data-reveal key={label} style={{ "--reveal-delay": `${index * 0.1}s` }}><span className="stat-index">0{index + 1}</span><strong>{value}</strong><span>{label}</span><i className="stat-accent-line" aria-hidden="true" /></div>)}</div></section>;
+  return <section className="stats-section"><div className="stats-grid">{stats.map(({ value, label }, index) => <div className="stat" data-reveal key={label} style={{ "--reveal-delay": `${index * 0.1}s` }}><span className="stat-index">0{index + 1}</span><strong>{value}</strong><span>{label}</span><i className="stat-accent-line" aria-hidden="true" /></div>)}</div></section>;
 }
 
 function Marquee() {
@@ -206,12 +154,11 @@ function Engagements() {
 }
 
 function Teaching() {
-  const rows = [["2018 — Present", "Amanj Academy", "Lead instructor & product design mentor", "Architected the curriculum and delivered 5 in-person and 17 online cohorts — the longest-running program of its kind in the market."], ["2017 — 2021", "Rahnema College", "Course Owner, curriculum architect & design instructor", "Designed four product design programs and taught the interaction and visual design tracks alongside a shipping product team."], ["2018 — 2023", "Accelerators & universities", "Design mentor, lecturer, thesis juror", "Source, GreenTech, Noafarinan, Product Factory, Doosent, Anso; guest lecturer and thesis juror at University of Art, University of Science and Culture, Shahid Beheshti University, Al-Zahra University, Tarbiat Modares University and Qazvin's Source accelerator."]];
-  return <section className="content-section teaching" id="teaching"><div className="section-heading"><span className="eyebrow">02 / Track record</span><h2>Teaching &amp; mentoring</h2></div><div className="teaching-list">{rows.map(([date, title, role, detail], index) => <article className="teaching-row" data-cursor="text" data-reveal key={title} style={{ "--reveal-delay": `${index * 0.1}s` }}><span className="date">{date}</span><div><h3>{title}</h3><span className="role">{role}</span></div><p>{detail}</p></article>)}</div></section>;
+  return <section className="content-section teaching" id="teaching"><div className="section-heading"><span className="eyebrow">02 / Track record</span><h2>Teaching &amp; mentoring</h2></div><div className="teaching-list">{teachingRows.map(({ date, title, role, detail }, index) => <article className="teaching-row" data-cursor="text" data-reveal key={title} style={{ "--reveal-delay": `${index * 0.1}s` }}><span className="date">{date}</span><div><h3>{title}</h3><span className="role">{role}</span></div><p>{detail}</p></article>)}</div></section>;
 }
 
 function Process() {
-  return <section className="content-section process" id="process"><div className="section-heading"><span className="eyebrow">03 / Process</span><h2>How an engagement starts</h2></div><div className="process-grid">{processSteps.map(([title, detail], index) => <article className="process-card" data-cursor="text" data-reveal key={title} style={{ "--reveal-delay": `${index * 0.08}s` }}><div className="process-top"><strong>0{index + 1}</strong><span>Step</span></div><h3>{title}</h3><p>{detail}</p></article>)}</div><div className="section-rule-label"><span />Book a design consultation · First session free</div></section>;
+  return <section className="content-section process" id="process"><div className="section-heading"><span className="eyebrow">03 / Process</span><h2>How an engagement starts</h2></div><div className="process-grid">{processSteps.map(({ title, description }, index) => <article className="process-card" data-cursor="text" data-reveal key={title} style={{ "--reveal-delay": `${index * 0.08}s` }}><div className="process-top"><strong>0{index + 1}</strong><span>Step</span></div><h3>{title}</h3><p>{description}</p></article>)}</div><div className="section-rule-label"><span />Book a design consultation · First session free</div></section>;
 }
 
 function Contact() {
@@ -256,7 +203,7 @@ function Contact() {
 }
 
 function ServicesPage() {
-  return <main className="services-page" id="top"><section className="services-hero" data-reveal><h1>Engagements</h1><p>Every engagement starts with a diagnostic: where the product loses users, or where the design team loses momentum. Scope follows from that — not from a package list. Consulting solves a defined problem quickly; coaching builds your team's own capability over time — most engagements blend both.</p></section><section className="services-areas" data-reveal><div className="services-section-head"><h2>Four areas of work</h2><span>Scope drawn from these</span></div><div className="services-grid">{serviceTracks.map(([number, title, tag, items], index) => <article className="service-card" data-cursor="text" data-reveal key={title} style={{ "--reveal-delay": `${index * 0.08}s` }}><span className="service-number">{number}</span><h3>{title}</h3><span className="service-tag">{tag}</span><ul>{items.map((item) => <li key={item}>· {item}</li>)}</ul></article>)}</div></section><section className="services-cta"><div className="services-cta-inner"><h2>Not sure which track fits? That is the first conversation.</h2><a className="services-cta-link" href="book.html">Book a session</a></div></section><SiteFooter /></main>;
+  return <main className="services-page" id="top"><section className="services-hero" data-reveal><h1>Engagements</h1><p>Every engagement starts with a diagnostic: where the product loses users, or where the design team loses momentum. Scope follows from that — not from a package list. Consulting solves a defined problem quickly; coaching builds your team's own capability over time — most engagements blend both.</p></section><section className="services-areas" data-reveal><div className="services-section-head"><h2>Four areas of work</h2><span>Scope drawn from these</span></div><div className="services-grid">{serviceTracks.map(({ number, title, tag, items }, index) => <article className="service-card" data-cursor="text" data-reveal key={title} style={{ "--reveal-delay": `${index * 0.08}s` }}><span className="service-number">{number}</span><h3>{title}</h3><span className="service-tag">{tag}</span><ul>{items.map((item) => <li key={item}>· {item}</li>)}</ul></article>)}</div></section><section className="services-cta"><div className="services-cta-inner"><h2>Not sure which track fits? That is the first conversation.</h2><a className="services-cta-link" href="book.html">Book a session</a></div></section><SiteFooter /></main>;
 }
 
 function AboutRowSection({ title, meta, children, className = "" }) {
@@ -277,23 +224,23 @@ function AboutPage() {
     </section>
 
     <AboutRowSection title="Teaching & mentoring" meta="2017 — Present">
-      <div className="about-cells">{teachingMentoring.map(([name, years, detail]) => <article className="about-cell" data-cursor="text" key={name}><div className="about-client-line"><h3>{name}</h3><span>{years}</span></div><p>{detail}</p></article>)}</div>
+      <div className="about-cells">{teachingMentoring.map(({ name, years, detail }) => <article className="about-cell" data-cursor="text" key={name}><div className="about-client-line"><h3>{name}</h3><span>{years}</span></div><p>{detail}</p></article>)}</div>
     </AboutRowSection>
 
     <AboutRowSection title="Consulting selection" meta="2017 — Present">
-      <div className="about-cells">{consultingSelection.map(([name, sector, detail]) => <article className="about-cell" data-cursor="text" key={name}><div className="about-client-line"><h3>{name}</h3><span>{sector}</span></div><p>{detail}</p></article>)}</div>
+      <div className="about-cells">{consultingSelection.map(({ name, sector, detail }) => <article className="about-cell" data-cursor="text" key={name}><div className="about-client-line"><h3>{name}</h3><span>{sector}</span></div><p>{detail}</p></article>)}</div>
     </AboutRowSection>
 
     <AboutRowSection title="Product design experience" meta="2005 — 2021">
-      <div className="about-cells">{productExperience.map(([name, years, detail]) => <article className="about-cell" data-cursor="text" key={name}><div className="about-client-line"><h3>{name}</h3><span>{years}</span></div><p>{detail}</p></article>)}</div>
+      <div className="about-cells">{productExperience.map(({ name, years, detail }) => <article className="about-cell" data-cursor="text" key={name}><div className="about-client-line"><h3>{name}</h3><span>{years}</span></div><p>{detail}</p></article>)}</div>
     </AboutRowSection>
 
     <AboutRowSection title="Speaking & recognition" meta="2016 — 2025">
-      <div className="about-cells">{speakingPanels.map(([year, detail]) => <article className="about-cell" data-cursor="text" key={`${year}-${detail}`}><span className="about-sector">{year}</span><p>{detail}</p></article>)}</div>
+      <div className="about-cells">{speakingPanels.map(({ year, detail }) => <article className="about-cell" data-cursor="text" key={`${year}-${detail}`}><span className="about-sector">{year}</span><p>{detail}</p></article>)}</div>
     </AboutRowSection>
 
     <AboutRowSection title="Writing" meta={<a href="https://alibabaei.medium.com" target="_blank" rel="noreferrer">On Medium →</a>} className="about-writing">
-      <div className="writing-grid">{writingArticles.map(([year, title, detail, href]) => <a className="article-card" data-cursor="view" data-cursor-label="read" href={href} target="_blank" rel="noreferrer" key={title}><span className="eyebrow">{year}</span><h3>{title}</h3><p>{detail}</p><span className="read-more">Read on Medium →</span></a>)}</div>
+      <div className="writing-grid">{writingArticles.map(({ year, title, detail, href }) => <a className="article-card" data-cursor="view" data-cursor-label="read" href={href} target="_blank" rel="noreferrer" key={title}><span className="eyebrow">{year}</span><h3>{title}</h3><p>{detail}</p><span className="read-more">Read on Medium →</span></a>)}</div>
     </AboutRowSection>
 
     <SiteFooter />
