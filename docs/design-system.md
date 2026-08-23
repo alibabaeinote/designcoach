@@ -26,6 +26,7 @@ The visual position is intentionally restrained: editorial, monochrome, spacious
 | `--ds-color-ink-panel` | `#1a1a1b` | Secondary dark panel | Dark engagement card; do not use for all dark sections |
 | `--ds-color-accent` | `#1620f5` | Action blue | Links, active numbers, selected pills, CTA, focus ring |
 | `--ds-color-accent-hover` | `var(--ds-color-accent)` | Action hover | The same brand blue; hover feedback comes from motion, not a second blue |
+| `--ds-color-on-accent` | `#fff` | Action text | Text and icons inside solid blue controls |
 | `--ds-color-feedback-error` | `#ff6b6b` | Validation feedback | Invalid field borders and form-level error feedback only |
 | `--ds-color-border` | `#cfd1d5` | Default rule | Grid rules, section borders, card borders |
 | `--ds-color-border-light` | `#e2e4e9` | Light rule | Header and low-contrast separators |
@@ -44,6 +45,7 @@ Rules:
 - Dark panels use `--ds-color-ink-panel` when they are a card and `--ds-color-ink` when they are a full section or overlay.
 - Text opacity is part of the hierarchy. Do not use a lighter colour to compensate for an incorrect font size.
 - Contrast must remain readable in both light and dark surfaces; use the `on-dark` tokens rather than reusing light-page tokens.
+- Solid blue controls always use `--ds-color-on-accent`; on dark surfaces they also receive a subtle white inset rule so their boundary and label remain clear without adding a second blue.
 
 ### 2.1.1 System dark mode
 
