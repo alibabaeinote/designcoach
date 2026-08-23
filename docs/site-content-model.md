@@ -38,6 +38,10 @@ Home
 
 The home page is a narrative, not a catalogue. It moves from promise → proof → offer → process → action.
 
+## 3.1 Source of truth
+
+English editorial content is stored in `src/content/siteContent.js`. UI components consume named entities from this module; they should not own client lists, service tracks, process steps, or biography records. When a content shape changes, update the module and its contract test. Visual decisions remain in `src/design-tokens.css` and `src/styles.css`.
+
 ## 4. Services content architecture
 
 `services.html` is a decision aid. It uses one shared service-track shape:
