@@ -20,7 +20,7 @@ const serviceTracks = [
 ];
 const consultingSelection = [
   ["Telewebion", "Video streaming", "Restructured information architecture and redesigned the Android interface, improving the browse-to-play journey."],
-  ["Behsazan Mellat", "Banking", "UX consulting for the Mellat neobank application."],
+  ["Baroro", "Beauty platform", "Visual and usability audit of the website interface, exploratory user-research and testing plan, and engagement improvements."],
   ["Skyroom", "Live classrooms", "Website UX and redesign of the educational admin panel."],
   ["BimeBazar / BeAndam", "Insurtech · Health", "Conversion optimisation of insurance purchase and diet-plan checkout flows."],
   ["Persis Pooya Data", "Enterprise ERP", "Usability audit and redesign direction for an enterprise ERP system."],
