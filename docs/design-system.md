@@ -66,6 +66,10 @@ Dark-mode rules:
 - Keep the blue accent for action, selected state and focus. It is never used to compensate for weak dark-surface contrast.
 - Use `--ds-color-surface-inverse` for intentionally dark regions. Do not use `--ds-color-ink` as a background, because `ink` is the current page-reading colour and changes with the active theme.
 - All supporting copy switches to the matching semantic text token. Raw light-page `rgba(10, 10, 11, ...)` values are not permitted in new work.
+- Dark contact controls use the raised surface token for the form panel, `--ds-color-text-on-dark` for entered values and success headings, and `--ds-color-text-on-dark-secondary` for supporting copy. Labels and quiet metadata use `--ds-color-text-on-dark-muted`.
+- The menu overlay, contact area, dark engagement card and shared footer are inverse regions: their foregrounds must never fall back to `--background`, because that token changes with the operating-system theme.
+- Focus-area chips keep a transparent dark-surface treatment until selected; selected chips and primary buttons use the single accent token with `--ds-color-on-accent` text and a subtle light inset boundary.
+- Long contact addresses remain readable on mobile by wrapping inside the content column; they must not be hidden or allowed to create horizontal overflow.
 - Validate both themes at wide desktop and `390px`, including keyboard focus, form validation, menu overlay, direct-route loading and shared-footer parity.
 
 ### 2.2 Typography
