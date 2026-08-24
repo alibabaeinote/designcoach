@@ -94,6 +94,7 @@ Rules:
 - Uppercase is reserved for navigation and metadata. Sentence case is used for explanatory copy.
 - Never use letter spacing to fix a wrong font size or line height. Tracking is part of the role token.
 - For Persian pages, keep the same hierarchy but use Persian line-height overrides and validate every wrap at mobile width.
+- Persian landing titles use `1.4` line-height on desktop and `1.45` on mobile so explicit two-line headlines remain optically separated. Highlighted words use the single accent token; in dark mode the accent surface is strengthened to preserve the white-on-blue reading contrast without introducing a second blue.
 
 ### 2.3 Spacing
 

@@ -1711,7 +1711,7 @@ html[lang="fa"] .cycle-word-mask {
 
 html[lang="fa"] .landing-hero .hero-h1 {
   font-size: clamp(44px, 4vw, 72px);
-  line-height: 1.25;
+  line-height: 1.4;
 }
 
 /* Keep the Persian landing title and its supporting copy visually distinct. */
@@ -1722,7 +1722,7 @@ html[lang="fa"] .landing-hero .hero-h1 + .intro-copy {
 @media (max-width: 767px) {
   html[lang="fa"] .landing-hero .hero-h1 {
     font-size: clamp(20px, 5.5vw, 24px);
-    line-height: 1.35;
+    line-height: 1.45;
   }
 }
 
@@ -1754,7 +1754,7 @@ html[lang="fa"] .site-menu-links a {
     --muted-88: rgba(248, 249, 250, 0.88);
     --muted-40: rgba(248, 249, 250, 0.42);
     --muted-30: rgba(248, 249, 250, 0.30);
-    --accent-pale: color-mix(in srgb, var(--accent) 20%, transparent);
+    --accent-pale: color-mix(in srgb, var(--accent) 34%, var(--cream));
     --border-soft: #565861;
     --border-light: #2D2F35;
   }
