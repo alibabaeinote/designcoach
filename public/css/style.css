@@ -401,7 +401,7 @@ h1 {
 @media (min-width: 768px) { .hero-h1 { font-size: 13vw; } }
 
 .mark-yellow {
-  background: var(--accent-pale);
+  background: color-mix(in srgb, var(--accent) 22%, transparent);
   color: var(--ink);
   padding: 0 0.14em;
   box-decoration-break: clone;
@@ -1711,7 +1711,7 @@ html[lang="fa"] .cycle-word-mask {
 
 html[lang="fa"] .landing-hero .hero-h1 {
   font-size: clamp(44px, 4vw, 72px);
-  line-height: 1.4;
+  line-height: 1.55;
 }
 
 /* Keep the Persian landing title and its supporting copy visually distinct. */
@@ -1722,7 +1722,7 @@ html[lang="fa"] .landing-hero .hero-h1 + .intro-copy {
 @media (max-width: 767px) {
   html[lang="fa"] .landing-hero .hero-h1 {
     font-size: clamp(20px, 5.5vw, 24px);
-    line-height: 1.45;
+    line-height: 1.6;
   }
 }
 

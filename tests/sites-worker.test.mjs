@@ -85,6 +85,14 @@ test("keeps the English About logo prominent above the intro", async () => {
   assert.match(stylesheet, /\.about-logo\{width:120px;height:120px/);
 });
 
+test("keeps the Persian landing title readable and highlighted", async () => {
+  const stylesheet = await readFile(new URL("../public/css/style.css", import.meta.url), "utf8");
+
+  assert.match(stylesheet, /\.mark-yellow\s*\{[\s\S]*background:\s*color-mix\(in srgb, var\(--accent\) 22%, transparent\)/);
+  assert.match(stylesheet, /html\[lang="fa"\] \.landing-hero \.hero-h1\s*\{[\s\S]*line-height:\s*1\.55/);
+  assert.match(stylesheet, /html\[lang="fa"\] \.landing-hero \.hero-h1\s*\{[\s\S]*line-height:\s*1\.6/);
+});
+
 test("keeps all statistics visually identical by default", async () => {
   const stylesheet = await readFile(new URL("../src/styles.css", import.meta.url), "utf8");
 
@@ -180,9 +188,9 @@ test("ships a focused Persian header and one shared footer system", async () => 
   assert.match(stylesheet, /html\[lang="fa"\] \.landing-hero \.hero-h1/);
   assert.match(stylesheet, /font-size:\s*clamp\(44px, 4vw, 72px\)/);
   assert.match(stylesheet, /font-size:\s*clamp\(20px, 5\.5vw, 24px\)/);
-  assert.match(stylesheet, /html\[lang="fa"\] \.landing-hero \.hero-h1\s*\{\s*font-size:\s*clamp\(44px, 4vw, 72px\);\s*line-height:\s*1\.4/);
+  assert.match(stylesheet, /html\[lang="fa"\] \.landing-hero \.hero-h1\s*\{\s*font-size:\s*clamp\(44px, 4vw, 72px\);\s*line-height:\s*1\.55/);
   assert.match(stylesheet, /html\[lang="fa"\] \.landing-hero \.hero-h1 \+ \.intro-copy\s*\{\s*margin-top:\s*16px/);
-  assert.match(stylesheet, /html\[lang="fa"\] \.landing-hero \.hero-h1\s*\{\s*font-size:\s*clamp\(20px, 5\.5vw, 24px\);\s*line-height:\s*1\.45/);
+  assert.match(stylesheet, /html\[lang="fa"\] \.landing-hero \.hero-h1\s*\{\s*font-size:\s*clamp\(20px, 5\.5vw, 24px\);\s*line-height:\s*1\.6/);
   assert.match(stylesheet, /--accent-pale:\s*color-mix\(in srgb, var\(--accent\) 34%, var\(--cream\)\)/);
   assert.match(stylesheet, /html\[lang="fa"\] \.form-footer\s*\{\s*border-top:\s*0/);
   assert.match(app, /function SiteFooter\(\)/);
