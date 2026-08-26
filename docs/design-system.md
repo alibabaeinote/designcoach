@@ -79,6 +79,7 @@ Dark-mode rules:
 | Display XL | Space Grotesk | `clamp(56px, 7vw, 100px)` | `48px` or page-specific | 600 / `.9–1.05` |
 | Display L | Space Grotesk | `72px` | `36–45px` | 600 / `1` |
 | Section heading | Space Grotesk | `40–60px` | `36–40px` | 600 / `1` |
+| Persian landing / section heading | KalamehWeb | `40–60px` | `32–40px` | 900 / `1.55–1.6` |
 | Card heading | Space Grotesk | `30px` | `24–27px` | 600 / `1.1–1.3` |
 | Body large | Inter | `18px` | `16px` | 400 / `1.5–1.56` |
 | Body medium | Inter | `16px` | `14–16px` | 400 / `1.5` |
@@ -96,7 +97,7 @@ Rules:
 - Uppercase is reserved for navigation and metadata. Sentence case is used for explanatory copy.
 - Never use letter spacing to fix a wrong font size or line height. Tracking is part of the role token.
 - For Persian pages, keep the same hierarchy but use Persian line-height overrides and validate every wrap at mobile width.
-- Persian landing titles use `1.55` line-height on desktop and `1.6` on mobile so explicit two-line headlines remain optically separated. Highlighted words use the single accent token; in dark mode the accent surface is strengthened to preserve the white-on-blue reading contrast without introducing a second blue.
+- Persian landing titles use the same size role as section headings: `40–60px` on desktop and `32–40px` on mobile. They use `1.55` line-height on desktop and `1.6` on mobile so explicit two-line headlines remain optically separated. Highlighted words use the single accent token; in dark mode the accent surface is strengthened to preserve the white-on-blue reading contrast without introducing a second blue.
 - Persian controls such as `دیدن خدمات` and `بازگشت` use the `Persian UI control` role at `14px`; compact section metadata such as `۰۲ / فرایند` uses the `Persian section metadata` role at `14px`. These roles are intentionally larger than Latin utility labels for Persian glyph readability and are not a global increase to all metadata.
 
 ### 2.3 Spacing

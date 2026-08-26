@@ -187,11 +187,11 @@ test("ships a focused Persian header and one shared footer system", async () => 
   assert.match(persianPage, /<h1 class="hero-h1">تصمیم‌های طراحی که<br>\s*تیم‌تون می‌تونه <span class="mark-yellow">واقعاً بسازه<\/span><\/h1>/);
   assert.doesNotMatch(persianPage, /data-cycle-words/);
   assert.match(stylesheet, /html\[lang="fa"\] \.landing-hero \.hero-h1/);
-  assert.match(stylesheet, /font-size:\s*clamp\(44px, 4vw, 72px\)/);
-  assert.match(stylesheet, /font-size:\s*clamp\(20px, 5\.5vw, 24px\)/);
-  assert.match(stylesheet, /html\[lang="fa"\] \.landing-hero \.hero-h1\s*\{\s*font-size:\s*clamp\(44px, 4vw, 72px\);\s*line-height:\s*1\.55/);
+  assert.match(stylesheet, /font-size:\s*clamp\(40px, 5vw, 60px\)/);
+  assert.match(stylesheet, /font-size:\s*clamp\(32px, 8\.2vw, 40px\)/);
+  assert.match(stylesheet, /html\[lang="fa"\] \.landing-hero \.hero-h1[\s\S]*font-size:\s*clamp\(40px, 5vw, 60px\);\s*line-height:\s*1\.55/);
   assert.match(stylesheet, /html\[lang="fa"\] \.landing-hero \.hero-h1 \+ \.intro-copy\s*\{\s*margin-top:\s*16px/);
-  assert.match(stylesheet, /html\[lang="fa"\] \.landing-hero \.hero-h1\s*\{\s*font-size:\s*clamp\(20px, 5\.5vw, 24px\);\s*line-height:\s*1\.6/);
+  assert.match(stylesheet, /html\[lang="fa"\] \.landing-hero \.hero-h1[\s\S]*font-size:\s*clamp\(32px, 8\.2vw, 40px\);\s*line-height:\s*1\.6/);
   assert.match(stylesheet, /--accent-pale:\s*color-mix\(in srgb, var\(--accent\) 34%, var\(--cream\)\)/);
   assert.match(stylesheet, /html\[lang="fa"\] \.btn-secondary,[\s\S]*\.back-switch[\s\S]*font-size:\s*var\(--fa-type-control-size\)/);
   assert.match(stylesheet, /html\[lang="fa"\] \.meta-right\s*\{[\s\S]*font-size:\s*var\(--fa-type-meta-size\)/);
