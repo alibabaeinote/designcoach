@@ -234,8 +234,10 @@ img { max-width: 100%; display: block; }
   direction: ltr;
 }
 .language-switch:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+.icon { display: inline-block; flex: 0 0 auto; vertical-align: middle; color: currentColor; }
+.concept-icon { width: var(--icon-size-conceptual, 22px); height: var(--icon-size-conceptual, 22px); }
 .back-switch { gap: 8px; direction: rtl; }
-.back-switch span { font-family: var(--font-body); font-size: 18px; line-height: 1; }
+.back-switch .icon { width: 20px; height: 20px; }
 
 /* ---------- Full-screen menu overlay ---------- */
 
@@ -352,19 +354,19 @@ html.menu-open, body.menu-open { overflow: hidden; }
 
 /* ---------- Buttons ---------- */
 
-.btn span, .btn-book span, .btn-invert span, .btn-submit span {
+.btn .icon, .btn-book .icon, .btn-invert .icon, .btn-submit .icon {
   display: inline-block;
   transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 @media (hover: hover) {
-  .btn:hover span, .btn-book:hover span, .btn-invert:hover span, .btn-submit:not(:disabled):hover span {
+  .btn:hover .icon, .btn-book:hover .icon, .btn-invert:hover .icon, .btn-submit:not(:disabled):hover .icon {
     transform: translateX(5px);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .btn span, .btn-book span, .btn-invert span, .btn-submit span { transition: none; }
+  .btn .icon, .btn-book .icon, .btn-invert .icon, .btn-submit .icon { transition: none; }
 }
 
 /* ---------- Layout helpers ---------- */
@@ -1271,6 +1273,8 @@ a.meta-right:hover { color: var(--accent); text-decoration: underline; }
   display: block;
   margin-bottom: 12px;
 }
+.topics-label { display: inline-flex; align-items: center; gap: 8px; }
+.topics-label .icon { width: 22px; height: 22px; }
 
 .topics-row {
   display: flex;
@@ -1702,10 +1706,10 @@ html[lang="fa"] .topic-chip.is-selected {
 }
 
 @media (hover: hover) {
-  html[lang="fa"] .btn:hover span,
-  html[lang="fa"] .btn-book:hover span,
-  html[lang="fa"] .btn-invert:hover span,
-  html[lang="fa"] .btn-submit:not(:disabled):hover span {
+  html[lang="fa"] .btn:hover .icon,
+  html[lang="fa"] .btn-book:hover .icon,
+  html[lang="fa"] .btn-invert:hover .icon,
+  html[lang="fa"] .btn-submit:not(:disabled):hover .icon {
     transform: translateX(-5px);
   }
 }

@@ -112,6 +112,12 @@
   --ds-radius-pill: 999px;
   --ds-shadow-hover: 0 1px 3px rgba(0, 0, 0, 0.08);
 
+  /* Iconography: thin Lucide-compatible line icons. */
+  --ds-icon-stroke-width: 1.5;
+  --ds-icon-size-inline: 18px;
+  --ds-icon-size-conceptual: 22px;
+  --ds-icon-size-contact: 32px;
+
   /* Motion */
   --ds-ease-lux: cubic-bezier(0.33, 1, 0.68, 1);
   --ds-ease-inertia: cubic-bezier(0.76, 0, 0.24, 1);

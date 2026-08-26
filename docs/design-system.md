@@ -158,7 +158,26 @@ The React routes use `SiteFooter`; the static English booking page and Persian e
 - Blur is reserved for the scroll-aware header and scroll transition; do not add blur to cards or body copy.
 - The blue radial glow is reserved for the contact section and must remain behind content and pointer-inert.
 
-### 2.7 Brand mark
+### 2.7 Iconography
+
+The site uses a small Lucide-compatible line-icon vocabulary. Icons are inline SVGs so static HTML and React routes share the same rendering rules without a runtime dependency.
+
+| Role | Size | Stroke | Use |
+| --- | --- | --- | --- |
+| Inline action | `18px` | `1.5` | Back, submit, directional links |
+| Conceptual marker | `22px` | `1.5` | A semantic section or field label when it improves recognition |
+| Contact icon | `32px` | `1.5` | Email/contact identity only |
+
+Rules:
+
+- Use `currentColor`; icons inherit the semantic text or action token of their context. They are black on light surfaces and the corresponding on-dark token on dark surfaces, rather than introducing another color.
+- Keep icons simple, open, and line-based. Do not mix filled icon families or add decorative icons without a semantic role.
+- Directional icons follow the reading direction: Persian back and CTA controls use a left arrow; English submit controls use a right arrow.
+- Decorative icons use `aria-hidden="true"`; the surrounding link, button, legend, or heading remains the accessible name.
+- Use icons sparingly: one conceptual icon can clarify a section or list, but repeated content must not become icon-heavy.
+- The current icon paths follow Lucide's ISC-licensed line-icon vocabulary; see `docs/third-party-licenses.md`.
+
+### 2.8 Brand mark
 
 - The canonical portrait mark is `public/assets/ali-babaei-logo-v2.png`.
 - The main header renders it as a circular `30px` mark on desktop and `26px` on mobile, followed by the wordmark and role label.

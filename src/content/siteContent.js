@@ -1,6 +1,6 @@
 export const companies = [
   "Telewebion", "Behsazan Mellat", "Skyroom", "BimeBazar", "BeAndam", "Persis Pooya Data",
-  "Quera", "Seram Pakhsh", "Pezeshk Khoob", "Noban", "Sanjagh", "Enkoy",
+  "Quera", "Seram Pakhsh", "Pezeshk Khoob", "Noban", "Sanjagh", "Ankuy",
 ];
 
 export const focusAreas = [
