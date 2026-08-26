@@ -230,6 +230,8 @@ img { max-width: 100%; display: block; }
   direction: ltr;
 }
 .language-switch:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+.back-switch { gap: 8px; direction: rtl; }
+.back-switch span { font-family: var(--font-body); font-size: 18px; line-height: 1; }
 
 /* ---------- Full-screen menu overlay ---------- */
 

@@ -180,7 +180,8 @@ test("ships a focused Persian header and one shared footer system", async () => 
   const app = await readFile(new URL("../src/App.jsx", import.meta.url), "utf8");
   const stylesheet = await readFile(new URL("../dist/client/css/style.css", import.meta.url), "utf8");
 
-  assert.match(persianPage, /class="language-switch" href="\.\.\/index\.html"[^>]*>EN<\/a>/);
+  assert.match(persianPage, /class="language-switch back-switch" href="\.\.\/index\.html"[^>]*>.*بازگشت<\/a>/);
+  assert.match(stylesheet, /\.back-switch\s*\{[\s\S]*direction:\s*rtl/);
   assert.doesNotMatch(persianPage, /class="menu-trigger"/);
   assert.doesNotMatch(persianPage, /class="site-menu"/);
   assert.match(persianPage, /<h1 class="hero-h1">تصمیم‌های طراحی که<br>\s*تیم‌تون می‌تونه <span class="mark-yellow">واقعاً بسازه<\/span><\/h1>/);
