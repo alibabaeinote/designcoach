@@ -62,6 +62,12 @@
   --ds-type-label-leading: 1.33;
   --ds-type-eyebrow-size: 10px;
   --ds-type-eyebrow-leading: 1.6;
+  /* Persian UI roles: larger than Latin metadata for reliable small-screen
+     reading while remaining below body text in the hierarchy. */
+  --ds-type-fa-control-size: 14px;
+  --ds-type-fa-control-leading: 1.4;
+  --ds-type-fa-meta-size: 14px;
+  --ds-type-fa-meta-leading: 1.4;
   --ds-type-footer-name-size: clamp(42px, 4vw, 80px);
   --ds-type-footer-name-size-mobile: 48px;
   --ds-type-footer-name-leading: 0.95;

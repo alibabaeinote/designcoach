@@ -193,6 +193,8 @@ test("ships a focused Persian header and one shared footer system", async () => 
   assert.match(stylesheet, /html\[lang="fa"\] \.landing-hero \.hero-h1 \+ \.intro-copy\s*\{\s*margin-top:\s*16px/);
   assert.match(stylesheet, /html\[lang="fa"\] \.landing-hero \.hero-h1\s*\{\s*font-size:\s*clamp\(20px, 5\.5vw, 24px\);\s*line-height:\s*1\.6/);
   assert.match(stylesheet, /--accent-pale:\s*color-mix\(in srgb, var\(--accent\) 34%, var\(--cream\)\)/);
+  assert.match(stylesheet, /html\[lang="fa"\] \.btn-secondary,[\s\S]*\.back-switch[\s\S]*font-size:\s*var\(--fa-type-control-size\)/);
+  assert.match(stylesheet, /html\[lang="fa"\] \.meta-right\s*\{[\s\S]*font-size:\s*var\(--fa-type-meta-size\)/);
   assert.match(stylesheet, /html\[lang="fa"\] \.form-footer\s*\{\s*border-top:\s*0/);
   assert.match(app, /function SiteFooter\(\)/);
   assert.equal((app.match(/<SiteFooter \/>/g) || []).length, 3);

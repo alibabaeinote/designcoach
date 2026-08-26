@@ -84,6 +84,8 @@ Dark-mode rules:
 | Body medium | Inter | `16px` | `14–16px` | 400 / `1.5` |
 | Label / metadata | Space Grotesk | `10–12px` | `9–12px` | 400–500 / uppercase, tracked |
 | Mono-like utility | Space Grotesk | `10–12px` | `9–11px` | 400–500 / tracked |
+| Persian UI control | Space Grotesk | `14px` | `14px` | 400 / `1.4` |
+| Persian section metadata | Space Grotesk | `14px` | `14px` | 400–500 / `1.4`, tracked |
 
 Rules:
 
@@ -94,7 +96,8 @@ Rules:
 - Uppercase is reserved for navigation and metadata. Sentence case is used for explanatory copy.
 - Never use letter spacing to fix a wrong font size or line height. Tracking is part of the role token.
 - For Persian pages, keep the same hierarchy but use Persian line-height overrides and validate every wrap at mobile width.
-- Persian landing titles use `1.4` line-height on desktop and `1.45` on mobile so explicit two-line headlines remain optically separated. Highlighted words use the single accent token; in dark mode the accent surface is strengthened to preserve the white-on-blue reading contrast without introducing a second blue.
+- Persian landing titles use `1.55` line-height on desktop and `1.6` on mobile so explicit two-line headlines remain optically separated. Highlighted words use the single accent token; in dark mode the accent surface is strengthened to preserve the white-on-blue reading contrast without introducing a second blue.
+- Persian controls such as `دیدن خدمات` and `بازگشت` use the `Persian UI control` role at `14px`; compact section metadata such as `۰۲ / فرایند` uses the `Persian section metadata` role at `14px`. These roles are intentionally larger than Latin utility labels for Persian glyph readability and are not a global increase to all metadata.
 
 ### 2.3 Spacing
 

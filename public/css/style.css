@@ -70,6 +70,10 @@
   --footer-name-size-mobile: 48px;
   --footer-meta-size: 16px;
   --footer-meta-size-mobile: 14px;
+  --fa-type-control-size: 14px;
+  --fa-type-control-leading: 1.4;
+  --fa-type-meta-size: 14px;
+  --fa-type-meta-leading: 1.4;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -1719,6 +1723,19 @@ html[lang="fa"] .landing-hero .hero-h1 {
 /* Keep the Persian landing title and its supporting copy visually distinct. */
 html[lang="fa"] .landing-hero .hero-h1 + .intro-copy {
   margin-top: 16px;
+}
+
+/* Persian UI controls and metadata use dedicated role tokens rather than
+   inheriting the smaller Latin utility scale. */
+html[lang="fa"] .btn-secondary,
+html[lang="fa"] .back-switch {
+  font-size: var(--fa-type-control-size);
+  line-height: var(--fa-type-control-leading);
+}
+
+html[lang="fa"] .meta-right {
+  font-size: var(--fa-type-meta-size);
+  line-height: var(--fa-type-meta-leading);
 }
 
 @media (max-width: 767px) {
