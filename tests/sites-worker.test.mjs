@@ -194,6 +194,14 @@ test("ships a focused Persian header and one shared footer system", async () => 
   assert.match(stylesheet, /\.site-footer\s*\{/);
 });
 
+test("adds the loader sweep only to the homepage name", async () => {
+  const stylesheet = await readFile(new URL("../src/styles.css", import.meta.url), "utf8");
+
+  assert.match(stylesheet, /\.hero h1::after\{content:\"\"[\s\S]*animation:hero-name-loader/);
+  assert.match(stylesheet, /@keyframes hero-name-loader\{from\{transform:translateX\(-105%\)\}to\{transform:translateX\(105%\)\}\}/);
+  assert.doesNotMatch(stylesheet, /\.hero-center p::after|\.hero-actions::after/);
+});
+
 test("puts the Persian entry beside Menu on every English header", async () => {
   const app = await readFile(new URL("../src/App.jsx", import.meta.url), "utf8");
   const styles = await readFile(new URL("../src/styles.css", import.meta.url), "utf8");
