@@ -39,3 +39,8 @@ test("content entities follow the semantic shapes used by the UI", () => {
 test("content layer contains no blank editorial values", () => {
   assertNoEmptyStrings(requiredExports);
 });
+
+test("uses the correct Enkoy client name", () => {
+  assert.ok(companies.includes("Enkoy"));
+  assert.ok(!companies.includes("Ankuy"));
+});
