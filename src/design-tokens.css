@@ -118,6 +118,12 @@
   --ds-icon-size-conceptual: 22px;
   --ds-icon-size-contact: 32px;
 
+  /* Brand marks */
+  --ds-logo-hero-width: clamp(116px, 9vw, 168px);
+  --ds-logo-hero-width-mobile: 128px;
+  --ds-logo-hero-gap: var(--ds-space-4);
+  --ds-logo-hero-gap-mobile: var(--ds-space-6);
+
   /* Motion */
   --ds-ease-lux: cubic-bezier(0.33, 1, 0.68, 1);
   --ds-ease-inertia: cubic-bezier(0.76, 0, 0.24, 1);
