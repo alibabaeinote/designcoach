@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { companies, consultingSelection, focusAreas, processSteps, productExperience, serviceTracks, speakingPanels, stats, teachingMentoring, teachingRows, writingArticles } from "./content/siteContent.js";
 const logoUrl = "/assets/ali-babaei-logo-v2.png?rev=20260821";
+const heroLogoUrl = "/assets/hero-design-aware.png?rev=20260830";
 const formspreeEndpoint = "https://formspree.io/f/xbgrwqyy";
 
 function validateContactField(field, value) {
@@ -153,7 +154,7 @@ function MenuOverlay({ onClose, closing, onExited }) {
 }
 
 function Hero() {
-  return <section className="hero grain" id="top"><div className="hero-scroll-layer" aria-hidden="true" /><div className="hero-center"><span className="eyebrow">Tehran · Remote worldwide</span><h1><span>A</span><span>L</span><span>I</span><span className="hero-gap" aria-hidden="true" /><span>B</span><span>A</span><span>B</span><span>A</span><span>E</span><span>I</span></h1><p>I coach in-house design teams and advise product organisations on usability, research practice and design process. 20+ years designing digital products; eight years building the designers who do.</p><div className="hero-actions"><a className="button-primary" href="book.html">Request a consultation</a><a className="text-link" href="#engagements">See engagements</a></div></div><span className="scroll-cue">Scroll ↓</span></section>;
+  return <section className="hero grain" id="top"><div className="hero-scroll-layer" aria-hidden="true" /><div className="hero-center"><img className="hero-logo" src={heroLogoUrl} alt="Design, Aware." /><span className="eyebrow">Tehran · Remote worldwide</span><h1><span>A</span><span>L</span><span>I</span><span className="hero-gap" aria-hidden="true" /><span>B</span><span>A</span><span>B</span><span>A</span><span>E</span><span>I</span></h1><p>I coach in-house design teams and advise product organisations on usability, research practice and design process. 20+ years designing digital products; eight years building the designers who do.</p><div className="hero-actions"><a className="button-primary" href="book.html">Request a consultation</a><a className="text-link" href="#engagements">See engagements</a></div></div><span className="scroll-cue">Scroll ↓</span></section>;
 }
 
 function Stats() {
