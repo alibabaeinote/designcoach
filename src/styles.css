@@ -172,6 +172,13 @@
 .hero-scroll-layer{background:radial-gradient(circle at 0% 25%,color-mix(in srgb,var(--accent) 11%,transparent),transparent 30%),radial-gradient(circle at 100% 100%,rgba(225,227,231,.55),transparent 35%)}
 @media (prefers-color-scheme: dark){.hero-scroll-layer{background:radial-gradient(circle at 0% 25%,color-mix(in srgb,var(--accent) 14%,transparent),transparent 30%),radial-gradient(circle at 100% 100%,rgba(27,28,32,.85),transparent 35%)}}
 
+/* Hero brand mark: compact, monochrome and theme-aware. The source artwork
+   keeps its white canvas in light mode and uses blending to disappear into
+   the dark canvas while the artwork becomes white in dark mode. */
+.hero-logo{display:block;width:var(--ds-logo-hero-width);height:auto;margin:0 auto var(--ds-logo-hero-gap);background:transparent;object-fit:contain;transition:filter var(--ds-duration-standard) var(--ds-ease-lux)}
+@media(max-width:767px){.hero-logo{width:var(--ds-logo-hero-width-mobile);margin-bottom:var(--ds-logo-hero-gap-mobile)}}
+@media(prefers-color-scheme:dark){.hero-logo{filter:invert(1)}}
+
 /* Dark-mode control contract: entered values and feedback use the same
    semantic hierarchy as surrounding reading content. */
 @media (prefers-color-scheme: dark){
