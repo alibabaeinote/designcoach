@@ -184,6 +184,8 @@ Rules:
 - The main header renders it as a circular `30px` mark on desktop and `26px` on mobile, followed by the wordmark and role label.
 - The legacy `book.html` and `fa/` headers use the same asset so the brand remains consistent across entry points.
 - The same asset is the PNG favicon and Apple touch icon. Do not substitute the old logo mark or crop the image into a different shape without updating this contract.
+- The hero may use the compact `Design, Aware.` brand artwork from `public/assets/hero-design-aware.png` above the location eyebrow. Its width and gap are tokenized as `--ds-logo-hero-width`, `--ds-logo-hero-width-mobile`, `--ds-logo-hero-gap`, and `--ds-logo-hero-gap-mobile` so it remains a supporting mark and does not displace the hero hierarchy. The mobile gap uses the `24px` spacing step for clearer separation from the eyebrow.
+- On light surfaces the artwork uses the dark source treatment; under `prefers-color-scheme: dark` it is inverted to a white treatment with the background blended into the dark canvas. No additional brand colour is introduced.
 
 ## 3. Motion and interaction contract
 
