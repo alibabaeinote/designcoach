@@ -246,6 +246,6 @@ test("installs Microsoft Clarity on every public entry point", async () => {
 
   for (const page of [home, booking, persian]) {
     assert.match(page, /https:\/\/www\.clarity\.ms\/tag\/"\+i/);
-    assert.match(page, /"yazfej24sc"/);
+    assert.match(page, /"yazkgjr1mm"/);
   }
 });
