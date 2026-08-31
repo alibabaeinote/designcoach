@@ -238,3 +238,14 @@ test("ships route-specific crawl metadata for the React entry points", async () 
   assert.match(services, /<link rel="canonical" href="https:\/\/alibabaei\.info\/services\.html" \/>/);
   assert.match(services, /<title>Engagements — Ali Babaei<\/title>/);
 });
+
+test("installs Microsoft Clarity on every public entry point", async () => {
+  const home = await readFile(new URL("../index.html", import.meta.url), "utf8");
+  const booking = await readFile(new URL("../public/book.html", import.meta.url), "utf8");
+  const persian = await readFile(new URL("../public/fa/index.html", import.meta.url), "utf8");
+
+  for (const page of [home, booking, persian]) {
+    assert.match(page, /https:\/\/www\.clarity\.ms\/tag\/"\+i/);
+    assert.match(page, /"yazfej24sc"/);
+  }
+});
