@@ -15,10 +15,10 @@ export const stats = [
 ];
 
 export const processSteps = [
-  { title: "Employer request", description: "You reach out with the situation as you see it." },
+  { title: "Initial enquiry", description: "You reach out with the situation as you see it." },
   { title: "Understanding your situation", description: "You answer a short set of questions that shape the proposal." },
   { title: "Scope proposal", description: "A defined scope, not an open-ended retainer." },
-  { title: "Understanding your org", description: "Current state across all four areas of help, your team, product and existing practice." },
+  { title: "Understanding your organisation", description: "Current state across all four areas of help, your team, product and existing practice." },
   { title: "Planned work", description: "Scheduled sessions against agreed outcomes." },
   { title: "Ongoing guidance", description: "Unscheduled support as real questions come up." },
 ];
@@ -32,7 +32,7 @@ export const serviceTracks = [
 
 export const consultingSelection = [
   { name: "Telewebion", sector: "Video streaming", detail: "Restructured information architecture and redesigned the Android interface, improving the browse-to-play journey." },
-  { name: "Baroro", sector: "Beauty platform", detail: "Visual and usability audit of the website interface, exploratory user-research and testing plan, and engagement improvements." },
+  { name: "Baroro", sector: "Beauty platform", detail: "Visual and usability audit of the website; exploratory research and testing plan; and recommendations to improve engagement." },
   { name: "Skyroom", sector: "Live classrooms", detail: "Website UX and redesign of the educational admin panel." },
   { name: "BimeBazar / BeAndam", sector: "Insurtech · Health", detail: "Conversion optimisation of insurance purchase and diet-plan checkout flows." },
   { name: "Persis Pooya Data", sector: "Enterprise ERP", detail: "Usability audit and redesign direction for an enterprise ERP system." },

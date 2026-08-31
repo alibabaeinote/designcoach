@@ -71,9 +71,9 @@ test("keeps the brand logo on a stable public asset URL", async () => {
   const assetNames = await readdir(new URL("../dist/client/assets/", import.meta.url));
   const scripts = assetNames.filter((name) => name.endsWith(".js"));
   const bundles = await Promise.all(scripts.map((name) => readFile(new URL(`../dist/client/assets/${name}`, import.meta.url), "utf8")));
-  const logo = await readFile(new URL("../dist/client/assets/ali-babaei-logo-v2.png", import.meta.url));
+  const logo = await readFile(new URL("../dist/client/assets/ali-babaei-mark.png", import.meta.url));
 
-  assert.ok(bundles.some((bundle) => bundle.includes("/assets/ali-babaei-logo-v2.png")));
+  assert.ok(bundles.some((bundle) => bundle.includes("/assets/ali-babaei-mark.png")));
   assert.ok(bundles.every((bundle) => !bundle.includes("ali-babaei-logo-fj5Ez689.png")));
   assert.deepEqual(logo.subarray(1, 4).toString("ascii"), "PNG");
 });
@@ -130,6 +130,8 @@ test("uses Formspree with inline field validation and a locked success state", a
     assert.match(page, /name="org" type="text" required/);
   }
   assert.match(bookingScript, /if \(topicsGroup && topicsGroup\.dataset\.requiredMessage\)/);
+  assert.match(bookingScript, /invalidValidators\.forEach\(showValidatorError\)/);
+  assert.match(bookingScript, /setAttribute\("aria-invalid", "true"\)/);
   assert.match(bookingScript, /payload\?\.errors\?\.at\(0\)\?\.message/);
   assert.doesNotMatch(bookingScript, /const resetBtn = wrapper\.querySelector\("\.btn-reset"\)/);
 });
@@ -154,7 +156,7 @@ test("keeps the shared footer governed by documented design tokens", async () =>
   assert.match(staticStyles, /--footer-padding-block: 64px/);
   assert.match(staticStyles, /\.site-footer\s*\{[^}]*var\(--footer-padding-block\)/);
   assert.match(designSystem, /### 2\.5 Shared footer/);
-  assert.match(designSystem, /ali-babaei-logo-v2\.png/);
+  assert.match(designSystem, /ali-babaei-mark\.png/);
   assert.match(contentModel, /## 7\. Shared footer content contract/);
 });
 
@@ -223,4 +225,16 @@ test("puts the Persian entry beside Menu on every English header", async () => {
   assert.match(styles, /\.header-language-switch\{/);
   assert.match(bookingPage, /class="header-actions"[\s\S]*class="menu-trigger"[\s\S]*class="language-switch" href="fa\/"/);
   assert.match(bookingStyles, /\.header-actions\s*\{/);
+});
+
+test("ships route-specific crawl metadata for the React entry points", async () => {
+  const home = await readFile(new URL("../dist/client/index.html", import.meta.url), "utf8");
+  const about = await readFile(new URL("../dist/client/about.html", import.meta.url), "utf8");
+  const services = await readFile(new URL("../dist/client/services.html", import.meta.url), "utf8");
+
+  assert.match(home, /<link rel="canonical" href="https:\/\/alibabaei\.info\/" \/>/);
+  assert.match(about, /<link rel="canonical" href="https:\/\/alibabaei\.info\/about\.html" \/>/);
+  assert.match(about, /<meta property="og:url" content="https:\/\/alibabaei\.info\/about\.html" \/>/);
+  assert.match(services, /<link rel="canonical" href="https:\/\/alibabaei\.info\/services\.html" \/>/);
+  assert.match(services, /<title>Engagements — Ali Babaei<\/title>/);
 });

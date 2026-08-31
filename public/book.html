@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<link rel="icon" href="assets/ali-babaei-logo-v2.png?rev=20260821" type="image/png">
+<link rel="icon" href="assets/ali-babaei-mark.png?rev=20260831b" type="image/png">
 <link rel="icon" href="assets/favicon-32x32.png" type="image/png" sizes="32x32">
 <link rel="icon" href="assets/favicon-16x16.png" type="image/png" sizes="16x16">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -58,7 +58,7 @@
 
   <header class="site-header">
     <a href="index.html" class="brand">
-      <img src="assets/ali-babaei-logo-v2.png?rev=20260821" alt="Ali Babaei" class="brand-mark">
+      <img src="assets/ali-babaei-mark.png?rev=20260831b" alt="Ali Babaei" class="brand-mark">
       <span class="brand-name">Ali Babaei</span>
       <span class="brand-tag">Design coach / Consultant</span>
     </a>
@@ -113,19 +113,19 @@
         <form class="booking-form" action="https://formspree.io/f/xbgrwqyy" method="POST" novalidate>
           <div class="field">
             <label for="bk-name-2">Full name</label>
-            <input id="bk-name-2" name="name" type="text" required placeholder="Your name" data-required-message="Please enter your name.">
-            <span class="field-error"></span>
+            <input id="bk-name-2" name="name" type="text" required aria-describedby="bk-name-2-error" placeholder="Your name" data-required-message="Please enter your name.">
+            <span class="field-error" id="bk-name-2-error" aria-live="polite"></span>
           </div>
           <div class="field-row">
             <div class="field">
               <label for="bk-email-2">Work email</label>
-              <input id="bk-email-2" name="email" type="email" required placeholder="you@company.com" data-required-message="Please enter your work email." data-invalid-message="Please enter a valid email address.">
-              <span class="field-error"></span>
+              <input id="bk-email-2" name="email" type="email" required aria-describedby="bk-email-2-error" placeholder="you@company.com" data-required-message="Please enter your work email." data-invalid-message="Please enter a valid email address.">
+              <span class="field-error" id="bk-email-2-error" aria-live="polite"></span>
             </div>
             <div class="field">
               <label for="bk-org-2">Organisation</label>
-              <input id="bk-org-2" name="org" type="text" required placeholder="Company or team" data-required-message="Please enter your organisation.">
-              <span class="field-error"></span>
+              <input id="bk-org-2" name="org" type="text" required aria-describedby="bk-org-2-error" placeholder="Company or team" data-required-message="Please enter your organisation.">
+              <span class="field-error" id="bk-org-2-error" aria-live="polite"></span>
             </div>
           </div>
           <div class="field">
@@ -142,16 +142,16 @@
           </div>
           <div class="field">
             <label for="bk-note-2">What specifically should this session cover?</label>
-            <textarea id="bk-note-2" name="challenge" rows="5" required placeholder="Name one concrete topic — e.g. 'review our checkout funnel' or 'coach our team on design critique' — plus a preferred day/time window." data-required-message="Please tell me what this session should cover."></textarea>
-            <span class="field-error"></span>
+            <textarea id="bk-note-2" name="challenge" rows="5" required aria-describedby="bk-note-2-error" placeholder="Name one concrete topic — e.g. 'review our checkout funnel' or 'coach our team on design critique' — plus a preferred day/time window." data-required-message="Please tell me what this session should cover."></textarea>
+            <span class="field-error" id="bk-note-2-error" aria-live="polite"></span>
           </div>
-          <div class="form-error"></div>
+          <div class="form-error" role="alert"></div>
           <div class="form-footer">
             <span class="meta">Reply within 2 working days</span>
             <button type="submit" class="btn-submit">Send request<svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
           </div>
         </form>
-        <div class="booking-success">
+        <div class="booking-success" role="status" aria-live="polite">
           <span class="eyebrow">Request received</span>
           <h3>Thank you — I will be in touch</h3>
           <p>Expect a reply at the address you gave within two working days.</p>

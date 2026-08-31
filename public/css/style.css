@@ -239,6 +239,14 @@ img { max-width: 100%; display: block; }
 .back-switch { gap: 8px; direction: rtl; }
 .back-switch .icon { width: 20px; height: 20px; }
 
+/* Shared interaction floor for static routes. */
+.menu-trigger, .language-switch { min-height: 44px; }
+.topic-chip { min-height: 40px; }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
 /* ---------- Full-screen menu overlay ---------- */
 
 .site-menu {

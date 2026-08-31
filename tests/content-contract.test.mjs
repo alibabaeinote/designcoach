@@ -28,7 +28,7 @@ test("content entities follow the semantic shapes used by the UI", () => {
   assert.deepEqual(consultingSelection.find(({ name }) => name === "Baroro"), {
     name: "Baroro",
     sector: "Beauty platform",
-    detail: "Visual and usability audit of the website interface, exploratory user-research and testing plan, and engagement improvements.",
+    detail: "Visual and usability audit of the website; exploratory research and testing plan; and recommendations to improve engagement.",
   });
   writingArticles.forEach(({ year, title, detail, href }) => {
     assert.ok(year && title && detail);

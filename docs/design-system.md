@@ -126,7 +126,7 @@ Contract:
 | Main two-column split | `1fr 1fr`, or source-defined `1.05fr .95fr` / `1.2fr .9fr` |
 | Editorial row list | Two equal columns with a `1px` rule gap |
 | Process grid | Three equal columns on desktop; one column below `768px` |
-| Mobile | Single-column flow below `900px`; mobile spacing and type tuning below `767px` |
+| Compact / tablet | Below `900px`, primary content grids become one column and the four-metric statistics grid becomes two columns. Below `767px`, mobile spacing and type tuning apply while the statistics grid remains two columns. |
 | Full-bleed sections | Section background may span the viewport; content remains inside the container |
 
 Layout rules:
@@ -180,7 +180,7 @@ Rules:
 
 ### 2.8 Brand mark
 
-- The canonical portrait mark is `public/assets/ali-babaei-logo-v2.png`.
+- The canonical portrait mark is `public/assets/ali-babaei-mark.png`.
 - The main header renders it as a circular `30px` mark on desktop and `26px` on mobile, followed by the wordmark and role label.
 - The legacy `book.html` and `fa/` headers use the same asset so the brand remains consistent across entry points.
 - The same asset is the PNG favicon and Apple touch icon. Do not substitute the old logo mark or crop the image into a different shape without updating this contract.

@@ -135,6 +135,7 @@ function initSiteMenu() {
 
 function showValidatorError(v) {
   if (v.wrapper) v.wrapper.classList.add("has-error");
+  if (v.focusEl) v.focusEl.setAttribute("aria-invalid", "true");
   if (v.errorEl) {
     v.errorEl.textContent = v.message();
     v.errorEl.classList.add("is-visible");
@@ -143,6 +144,7 @@ function showValidatorError(v) {
 
 function clearValidatorError(v) {
   if (v.wrapper) v.wrapper.classList.remove("has-error");
+  if (v.focusEl) v.focusEl.removeAttribute("aria-invalid");
   if (v.errorEl) v.errorEl.classList.remove("is-visible");
 }
 
@@ -229,9 +231,10 @@ function initBookingForms() {
       errorBox.classList.remove("is-visible");
       validators.forEach(clearValidatorError);
 
-      const firstInvalid = validators.find((v) => !v.isValid());
+      const invalidValidators = validators.filter((v) => !v.isValid());
+      const firstInvalid = invalidValidators[0];
       if (firstInvalid) {
-        showValidatorError(firstInvalid);
+        invalidValidators.forEach(showValidatorError);
         firstInvalid.focusEl.focus();
         firstInvalid.wrapper.scrollIntoView({ behavior: "smooth", block: "center" });
         return;

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { companies, consultingSelection, focusAreas, processSteps, productExperience, serviceTracks, speakingPanels, stats, teachingMentoring, teachingRows, writingArticles } from "./content/siteContent.js";
-const logoUrl = "/assets/ali-babaei-logo-v2.png?rev=20260831";
+const logoUrl = "/assets/ali-babaei-mark.png?rev=20260831b";
 const heroLogoUrl = "/assets/hero-design-aware.png?rev=20260831";
 const formspreeEndpoint = "https://formspree.io/f/xbgrwqyy";
 
@@ -137,12 +137,7 @@ function SiteFooter() {
 }
 
 function BrandLogo({ className, alt }) {
-  return <img className={className} src={logoUrl} alt={alt} onError={(event) => {
-    if (event.currentTarget.dataset.fallback) return;
-    event.currentTarget.dataset.fallback = "true";
-    const fallbackAsset = ["ali-babaei-logo", "fj5Ez689.png"].join("-");
-    event.currentTarget.src = `/assets/${fallbackAsset}?rev=20260831`;
-  }} />;
+  return <img className={className} src={logoUrl} alt={alt} />;
 }
 
 function Header({ onOpen, onClose, scrolled, homeHref, services }) {
@@ -279,6 +274,26 @@ export function App() {
   const scrolled = usePageMotion();
   const isServicesPage = window.location.pathname.endsWith("/services.html");
   const isAboutPage = window.location.pathname.endsWith("/about.html");
+
+  useEffect(() => {
+    const meta = isAboutPage
+      ? { title: "About — Ali Babaei", description: "Ali Babaei is a design mentor and UX consultant helping product teams improve usability, research practice and design process.", url: "https://alibabaei.info/about.html" }
+      : isServicesPage
+        ? { title: "Engagements — Ali Babaei", description: "Consulting and coaching for product teams: usability, research practice, conversion, retention and design-team growth.", url: "https://alibabaei.info/services.html" }
+        : { title: "Ali Babaei — Design decisions your team can ship", description: "Design coaching and UX consulting for product teams in Tehran and remotely worldwide.", url: "https://alibabaei.info/" };
+    document.title = meta.title;
+    const setMeta = (selector, attribute, value) => {
+      const node = document.querySelector(selector);
+      if (node) node.setAttribute(attribute, value);
+    };
+    setMeta('meta[name="description"]', "content", meta.description);
+    setMeta('link[rel="canonical"]', "href", meta.url);
+    setMeta('meta[property="og:title"]', "content", meta.title);
+    setMeta('meta[property="og:description"]', "content", meta.description);
+    setMeta('meta[property="og:url"]', "content", meta.url);
+    setMeta('meta[name="twitter:title"]', "content", meta.title);
+    setMeta('meta[name="twitter:description"]', "content", meta.description);
+  }, [isAboutPage, isServicesPage]);
 
   useEffect(() => {
     document.querySelectorAll('link[rel="icon"], link[rel="apple-touch-icon"]').forEach((link) => { link.href = logoUrl; });
