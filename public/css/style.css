@@ -1446,7 +1446,7 @@ a.meta-right:hover { color: var(--accent); text-decoration: underline; }
 }
 
 .footer-tag {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: var(--footer-meta-size);
   color: var(--dark-muted-2);
 }
@@ -1459,9 +1459,9 @@ a.meta-right:hover { color: var(--accent); text-decoration: underline; }
 }
 
 .footer-email {
-  color: var(--accent) !important;
-  font-family: var(--font-display);
-  font-weight: 600;
+  color: var(--dark-muted-2) !important;
+  font-family: var(--font-body);
+  font-weight: 400;
   font-size: var(--footer-meta-size);
 }
 
@@ -1473,13 +1473,13 @@ a.meta-right:hover { color: var(--accent); text-decoration: underline; }
 
 .footer-social a {
   color: var(--dark-muted-1);
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: var(--footer-meta-size);
 }
 .footer-social a:hover { color: var(--accent); }
 
 .copyright {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: var(--footer-meta-size);
   color: var(--dark-muted-2);
 }
