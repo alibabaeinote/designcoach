@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { companies, consultingSelection, focusAreas, processSteps, productExperience, serviceTracks, speakingPanels, stats, teachingMentoring, teachingRows, writingArticles } from "./content/siteContent.js";
-const logoUrl = "/assets/ali-babaei-logo-v2.png?rev=20260821";
-const heroLogoUrl = "/assets/hero-design-aware.png?rev=20260830";
+const logoUrl = "/assets/ali-babaei-logo-v2.png?rev=20260831";
+const heroLogoUrl = "/assets/hero-design-aware.png?rev=20260831";
 const formspreeEndpoint = "https://formspree.io/f/xbgrwqyy";
 
 function validateContactField(field, value) {
