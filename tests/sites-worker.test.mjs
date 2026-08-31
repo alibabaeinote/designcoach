@@ -220,7 +220,7 @@ test("keeps the dark hero logo portrait dark on a white medallion", async () => 
   const stylesheet = await readFile(new URL("../src/styles.css", import.meta.url), "utf8");
 
   assert.match(app, /className="hero-logo-lockup"[\s\S]*className="hero-logo hero-logo-base"[\s\S]*className="hero-logo hero-logo-portrait"/);
-  assert.match(stylesheet, /@media\(prefers-color-scheme:dark\)\{\.hero-logo-base\{filter:invert\(1\)\}\.hero-logo-portrait\{[^}]*background:#fff[^}]*filter:none/);
+  assert.match(stylesheet, /@media\(prefers-color-scheme:dark\)\{\.hero-logo-base\{filter:invert\(1\)\}\.hero-logo-portrait\{[^}]*background:#fff[^}]*clip-path:ellipse\(17\.25% 38\.88% at 79\.64% 48\.39%\)[^}]*filter:none/);
 });
 
 test("puts the Persian entry beside Menu on every English header", async () => {

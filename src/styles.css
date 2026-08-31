@@ -181,7 +181,7 @@
 /* Dark mode keeps the type white, while the portrait remains dark inside its white medallion. */
 .hero-logo-lockup{position:relative;width:var(--ds-logo-hero-width);margin:0 auto var(--ds-logo-hero-gap)}.hero-logo{display:block;width:100%;height:auto;background:transparent;object-fit:contain;transition:filter var(--ds-duration-standard) var(--ds-ease-lux)}.hero-logo-portrait{display:none}
 @media(max-width:767px){.hero-logo-lockup{width:var(--ds-logo-hero-width-mobile);margin-bottom:var(--ds-logo-hero-gap-mobile)}}
-@media(prefers-color-scheme:dark){.hero-logo-base{filter:invert(1)}.hero-logo-portrait{display:block;position:absolute;inset:0;background:#fff;clip-path:ellipse(17.8% 40.5% at 79.6% 50%);filter:none}}
+@media(prefers-color-scheme:dark){.hero-logo-base{filter:invert(1)}.hero-logo-portrait{display:block;position:absolute;inset:0;background:#fff;clip-path:ellipse(17.25% 38.88% at 79.64% 48.39%);filter:none}}
 
 /* Dark-mode control contract: entered values and feedback use the same
    semantic hierarchy as surrounding reading content. */
