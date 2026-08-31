@@ -136,9 +136,18 @@ function SiteFooter() {
   return <footer className="unified-footer"><div className="unified-footer-brand"><strong>Ali Babaei</strong><span>Design coaching · UX consulting · Tehran &amp; remote</span></div><div className="unified-footer-meta"><a href="mailto:alibabaeinote@gmail.com">alibabaeinote@gmail.com</a><nav><a href="https://www.linkedin.com/in/alibabaei" target="_blank" rel="noreferrer">LinkedIn</a><a href="https://dribbble.com/alibabaei" target="_blank" rel="noreferrer">Dribbble</a><a href="https://www.behance.net/alibabaei" target="_blank" rel="noreferrer">Behance</a><a href="https://alibabaei.medium.com" target="_blank" rel="noreferrer">Medium</a></nav><small>© 2026 · All rights reserved</small></div></footer>;
 }
 
+function BrandLogo({ className, alt }) {
+  return <img className={className} src={logoUrl} alt={alt} onError={(event) => {
+    if (event.currentTarget.dataset.fallback) return;
+    event.currentTarget.dataset.fallback = "true";
+    const fallbackAsset = ["ali-babaei-logo", "fj5Ez689.png"].join("-");
+    event.currentTarget.src = `/assets/${fallbackAsset}?rev=20260831`;
+  }} />;
+}
+
 function Header({ onOpen, onClose, scrolled, homeHref, services }) {
   return <header className={`site-header ${services ? "services-site-header" : ""} ${scrolled ? "is-scrolled" : ""}`}>
-    <a className="brand" href={homeHref} onClick={onClose}><img className="brand-logo" src={logoUrl} alt="Ali Babaei" /><span className="brand-name">Ali Babaei</span><span className="brand-dot">•</span><span className="brand-role">Design Coach / Consultant</span></a>
+    <a className="brand" href={homeHref} onClick={onClose}><BrandLogo className="brand-logo" alt="Ali Babaei" /><span className="brand-name">Ali Babaei</span><span className="brand-dot">•</span><span className="brand-role">Design Coach / Consultant</span></a>
     <div className="header-actions"><button className="menu-button" type="button" onClick={onOpen}><span className="menu-lines"><span /><span /></span>Menu</button><a className="header-language-switch" href="fa/" lang="fa" hreflang="fa" aria-label="Switch to Persian">FA</a></div>
     <div className={`scroll-progress ${scrolled ? "is-visible" : ""}`} aria-hidden="true" />
   </header>;
@@ -231,7 +240,7 @@ function AboutPage() {
   return <main className="about-page" id="top">
     <section className="about-intro about-reveal" data-reveal>
       <div className="about-copy">
-        <img className="about-logo" src={logoUrl} alt="Ali Babaei" />
+        <BrandLogo className="about-logo" alt="Ali Babaei" />
         <span className="eyebrow">About</span>
         <h1>Ali Babaei</h1>
         <p>Design mentor and UX consultant with 20+ years in digital product design and eight years spent building designers and design practices. Architect and lead instructor of 40+ product design cohorts across academies, six universities and startup accelerators, and advisor to 20+ product teams on usability, research practice and design process.</p>
