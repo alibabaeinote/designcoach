@@ -119,8 +119,8 @@
   --ds-icon-size-contact: 32px;
 
   /* Brand marks */
-  --ds-logo-hero-width: clamp(116px, 9vw, 168px);
-  --ds-logo-hero-width-mobile: 128px;
+  --ds-logo-hero-width: clamp(168px, 16vw, 280px);
+  --ds-logo-hero-width-mobile: 148px;
   --ds-logo-hero-gap: var(--ds-space-4);
   --ds-logo-hero-gap-mobile: var(--ds-space-6);
 
