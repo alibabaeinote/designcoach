@@ -1797,3 +1797,21 @@ html[lang="fa"] .site-menu-links a {
   .book-form-panel, .booking-success { color: var(--body-copy); }
   .field input, .field textarea { color: var(--body-copy); }
 }
+
+
+/* Keep Latin footer content on the same type system as the English routes. */
+html[lang="fa"] .site-footer .footer-wordmark {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+  font-size: var(--footer-name-size);
+  line-height: 1;
+  letter-spacing: -0.02em !important;
+}
+html[lang="fa"] .site-footer .footer-tag,
+html[lang="fa"] .site-footer .footer-email,
+html[lang="fa"] .site-footer .footer-social a,
+html[lang="fa"] .site-footer .copyright {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.02em !important;
+}
