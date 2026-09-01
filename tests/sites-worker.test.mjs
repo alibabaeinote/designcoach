@@ -186,6 +186,7 @@ test("ships a focused Persian header and one shared footer system", async () => 
   const stylesheet = await readFile(new URL("../dist/client/css/style.css", import.meta.url), "utf8");
 
   assert.match(persianPage, /class="language-switch back-switch" href="\.\.\/index\.html"[^>]*>.*بازگشت<\/a>/);
+  assert.match(persianPage, /fonts\.googleapis\.com\/css2\?family=Inter:wght@400;500;600&family=Space\+Grotesk:wght@400;500;600;700&display=swap/);
   assert.match(stylesheet, /\.back-switch\s*\{[\s\S]*direction:\s*rtl/);
   assert.doesNotMatch(persianPage, /class="menu-trigger"/);
   assert.doesNotMatch(persianPage, /class="site-menu"/);
