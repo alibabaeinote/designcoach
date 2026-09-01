@@ -215,12 +215,16 @@ test("adds the loader sweep only to the homepage name", async () => {
   assert.doesNotMatch(stylesheet, /\.hero-center p::after|\.hero-actions::after/);
 });
 
-test("keeps the dark hero logo portrait dark on a white medallion", async () => {
+test("temporarily serves the light theme while retaining the dark logo asset", async () => {
   const app = await readFile(new URL("../src/App.jsx", import.meta.url), "utf8");
   const stylesheet = await readFile(new URL("../src/styles.css", import.meta.url), "utf8");
 
-  assert.match(app, /className="hero-logo-lockup"[\s\S]*className="hero-logo hero-logo-base"[\s\S]*className="hero-logo hero-logo-portrait"/);
-  assert.match(stylesheet, /@media\(prefers-color-scheme:dark\)\{\.hero-logo-base\{filter:invert\(1\)\}\.hero-logo-portrait\{[^}]*background:#fff[^}]*clip-path:ellipse\(17\.25% 38\.88% at 79\.64% 48\.39%\)[^}]*filter:none/);
+  assert.match(app, /const heroLogoDarkUrl = "\/assets\/hero-design-aware-dark\.png\?rev=20260831"/);
+  assert.match(app, /const darkModeEnabled = false/);
+  assert.match(app, /const darkModeMedia = darkModeEnabled \? "\(prefers-color-scheme: dark\)" : "not all"/);
+  assert.match(app, /<source media=\{darkModeMedia\} srcSet=\{heroLogoDarkUrl\} \/><img className="hero-logo" src=\{heroLogoUrl\}/);
+  assert.match(stylesheet, /\.hero-logo-lockup picture,\.hero-logo\{display:block;width:100%\}/);
+  assert.match(stylesheet, /@media not all \{\.hero-logo\{transform:scale\(1\.2\)\}\}/);
 });
 
 test("puts the Persian entry beside Menu on every English header", async () => {

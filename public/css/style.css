@@ -1776,7 +1776,8 @@ html[lang="fa"] .site-menu-links a {
 /* System dark mode for the static English and Persian entry points. The
    inverse header/menu/footer surfaces remain black; reading surfaces follow
    the operating system preference without requiring a second visual language. */
-@media (prefers-color-scheme: dark) {
+/* Temporarily disabled: retain the dark-theme rules for later reactivation. */
+@media not all {
   :root {
     color-scheme: dark;
     --cream: #0A0A0B;

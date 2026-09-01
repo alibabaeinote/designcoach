@@ -170,7 +170,7 @@
 .contact-form-success{border-color:color-mix(in srgb,var(--accent) 45%,transparent);background:color-mix(in srgb,var(--accent) 12%,transparent)}
 .contact-form-success .eyebrow{color:color-mix(in srgb,var(--accent) 52%,white)}
 .hero-scroll-layer{background:radial-gradient(circle at 0% 25%,color-mix(in srgb,var(--accent) 11%,transparent),transparent 30%),radial-gradient(circle at 100% 100%,rgba(225,227,231,.55),transparent 35%)}
-@media (prefers-color-scheme: dark){.hero-scroll-layer{background:radial-gradient(circle at 0% 25%,color-mix(in srgb,var(--accent) 14%,transparent),transparent 30%),radial-gradient(circle at 100% 100%,rgba(27,28,32,.85),transparent 35%)}}
+@media not all {.hero-scroll-layer{background:radial-gradient(circle at 0% 25%,color-mix(in srgb,var(--accent) 14%,transparent),transparent 30%),radial-gradient(circle at 100% 100%,rgba(27,28,32,.85),transparent 35%)}}
 
 /* Shared interaction floor: compact labels remain easy to tap without changing hierarchy. */
 .menu-button,.header-language-switch{min-height:44px}.header-language-switch{min-width:44px;justify-content:center}.menu-button{padding-inline:8px}
@@ -178,14 +178,14 @@
 /* Tablet metric grid: avoid four compressed columns between mobile and desktop. */
 @media (min-width:768px) and (max-width:900px){.stats-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.stats-grid .stat:nth-child(2){border-right:0}.stats-grid .stat:nth-child(-n+2){border-bottom:1px solid var(--border)}}
 
-/* Dark mode keeps the type white, while the portrait remains dark inside its white medallion. */
-.hero-logo-lockup{position:relative;width:var(--ds-logo-hero-width);margin:0 auto var(--ds-logo-hero-gap)}.hero-logo{display:block;width:100%;height:auto;background:transparent;object-fit:contain;transition:filter var(--ds-duration-standard) var(--ds-ease-lux)}.hero-logo-portrait{display:none}
+/* The dark lockup is supplied artwork; the light artwork remains untouched. */
+.hero-logo-lockup{width:var(--ds-logo-hero-width);margin:0 auto var(--ds-logo-hero-gap)}.hero-logo-lockup picture,.hero-logo{display:block;width:100%}.hero-logo{height:auto;background:transparent;object-fit:contain}
 @media(max-width:767px){.hero-logo-lockup{width:var(--ds-logo-hero-width-mobile);margin-bottom:var(--ds-logo-hero-gap-mobile)}}
-@media(prefers-color-scheme:dark){.hero-logo-base{filter:invert(1)}.hero-logo-portrait{display:block;position:absolute;inset:0;background:#fff;clip-path:ellipse(17.25% 38.88% at 79.64% 48.39%);filter:none}}
+@media not all {.hero-logo{transform:scale(1.2)}}
 
 /* Dark-mode control contract: entered values and feedback use the same
    semantic hierarchy as surrounding reading content. */
-@media (prefers-color-scheme: dark){
+@media not all {
   .contact-form{background:var(--ds-color-surface);border-color:var(--ds-color-border-on-dark)}
   .contact-form label,.contact-form legend{color:var(--ds-color-text-on-dark-muted)}
   .contact-form input,.contact-form textarea{color:var(--ds-color-text-on-dark);border-bottom-color:var(--ds-color-border-on-dark)}
@@ -204,7 +204,7 @@
 
 /* Action buttons remain legible on every intentionally dark surface. */
 .button-primary,.services-cta-link{color:var(--ds-color-on-accent)}
-@media (prefers-color-scheme: dark){
+@media not all {
   .button-primary,.services-cta-link,.area-options button.selected{
     color:var(--ds-color-on-accent);
     box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--ds-color-on-accent) 26%,transparent);
@@ -261,7 +261,7 @@
 
 /* System dark mode: contextual dark regions stay inverse; page surfaces switch
    via semantic tokens so hierarchy, not a colour inversion, drives the theme. */
-@media (prefers-color-scheme: dark) {
+@media not all {
   .grain{background-image:radial-gradient(rgba(248,249,250,.035) 1px,transparent 1px)}
   .site-header.is-scrolled{background:rgba(10,10,11,.82);border-bottom-color:var(--border)}
   .hero-scroll-layer{background:radial-gradient(circle at 0% 25%,rgba(46,91,255,.14),transparent 30%),radial-gradient(circle at 100% 100%,rgba(27,28,32,.85),transparent 35%)}
@@ -303,4 +303,4 @@
 @media(max-width:520px){.header-actions{gap:10px}.brand-role{display:none}.header-language-switch{font-size:10px}}
 
 /* This must follow route and theme styles so all legacy effects use the active accent token. */
-@media (prefers-color-scheme: dark){.hero-scroll-layer{background:radial-gradient(circle at 0% 25%,color-mix(in srgb,var(--accent) 14%,transparent),transparent 30%),radial-gradient(circle at 100% 100%,rgba(27,28,32,.85),transparent 35%)}}
+@media not all {.hero-scroll-layer{background:radial-gradient(circle at 0% 25%,color-mix(in srgb,var(--accent) 14%,transparent),transparent 30%),radial-gradient(circle at 100% 100%,rgba(27,28,32,.85),transparent 35%)}}

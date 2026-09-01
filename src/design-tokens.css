@@ -136,7 +136,8 @@
 
 /* System dark mode. Primitives stay role-based; only semantic page surfaces
    and reading hierarchy switch. Inverse surfaces remain intentionally dark. */
-@media (prefers-color-scheme: dark) {
+/* Temporarily disabled: preserve the dark tokens for reactivation. */
+@media not all {
   :root {
     color-scheme: dark;
     --ds-color-canvas: #0a0a0b;
