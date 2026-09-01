@@ -155,6 +155,9 @@ test("keeps the shared footer governed by documented design tokens", async () =>
   assert.match(staticStyles, /\.site-menu-links a\s*\{[\s\S]*color: var\(--dark-muted-1\)/);
   assert.match(staticStyles, /--footer-padding-block: 64px/);
   assert.match(staticStyles, /\.site-footer\s*\{[^}]*var\(--footer-padding-block\)/);
+  assert.match(staticStyles, /html\[lang="fa"\] \.site-footer\s*\{[\s\S]*font-family:\s*"Inter", sans-serif;[\s\S]*font-weight:\s*400;/);
+  assert.match(staticStyles, /html\[lang="fa"\] \.site-footer \.footer-wordmark\s*\{[\s\S]*font-family:\s*"Space Grotesk", sans-serif;/);
+  assert.match(staticStyles, /html\[lang="fa"\] \.site-footer \.footer-tag,[\s\S]*letter-spacing:\s*-0\.36px !important;/);
   assert.match(designSystem, /### 2\.5 Shared footer/);
   assert.match(designSystem, /ali-babaei-mark\.png/);
   assert.match(contentModel, /## 7\. Shared footer content contract/);
